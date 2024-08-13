@@ -13,6 +13,7 @@ class Reservation extends Model
         'nom',
         'date',
         'heure',
-        'nombre_personne'
+        'nombre_personne',
+        'commentaires',
      ];
 }

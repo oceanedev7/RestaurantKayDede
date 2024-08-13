@@ -17,6 +17,7 @@ return new class extends Migration
             $table->date('date');
             $table->time('heure');
             $table->integer('nombre_personne');
+            $table->text('commentaires');
             $table->timestamps();
         });
     }

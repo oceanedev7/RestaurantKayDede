@@ -26,14 +26,6 @@ Route::get('/contact', function () {
     return view('pages.user.contact');
 })->name('contactez-nous');
 
-// Route::get('/notrecarte', function () {
-//     return view('pages.user.notrecarte');
-// })->name('notrecarte');
-
-// Route::get('/produit', function () {
-//     return view('pages.user.produit');
-// })->name('produit');
-
 Route::get('/demandecontact', [ContactController::class, 'index']);
 Route::post('/demandedecontact', [ContactController::class, 'create'])->name('contact');
 
