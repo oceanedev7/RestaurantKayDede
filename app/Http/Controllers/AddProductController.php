@@ -24,40 +24,48 @@ class AddProductController extends Controller
      */
     public function create(Request $request)
     {
-        //  dd($request);            
-        
-        Produit::create($request->all());
-
-        $request->validate([
+        $validatedData = $request->validate([
             'type' => 'required|string',
             'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'nom' => 'required|string',
             'ingredients' => 'required|string',
             'description' => 'required|string',
-            'taille' => 'string',
+            'taille' => 'string', 
             'prix' => 'required|numeric',
         ]);
     
-            // dd('2', $request);
-
         if ($request->hasFile('photo')) {
             $path = $request->file('photo')->store('public/images');
-            $photoPath = Storage::url($path);
+            $validatedData['photo'] = $path; 
+        }
+    
+        Produit::create($validatedData);
+    
+        
+        return redirect()->back();     
+
+        // Produit::create($request->all());
+
+        // $request->validate([
+        //     'type' => 'required|string',
+        //     'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+        //     'nom' => 'required|string',
+        //     'ingredients' => 'required|string',
+        //     'description' => 'required|string',
+        //     'taille' => 'string',
+        //     'prix' => 'required|numeric',
+        // ]);
+    
+        //     // dd('2', $request);
+
+        // if ($request->hasFile('photo')) {
+        //     $path = $request->file('photo')->store('public/images');
+        //     $photoPath = Storage::url($path);
             
         
-        }
+        // }
 
-            //  Produit::create([
-            //     'type' => $request->input('type'),
-            //     'photo' => $path,
-            //     'nom' => $request->input('nom'),
-            //     'ingredients' => $request->input('ingredients'),
-            //     'description' => $request->input('description'),
-            //     'taille' => $request->input('taille'),
-            //     'prix' => $request->input('prix'),
-                
-            // ]);
-             return redirect()->back()->with('photoPath', $photoPath);
+        //      return redirect()->back()->with('photoPath', $photoPath);
     }
 
     /**

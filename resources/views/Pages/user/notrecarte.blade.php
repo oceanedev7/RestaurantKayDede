@@ -46,8 +46,7 @@
 
               <div class="flex flex-row justify-between">
                 <span class="text-xl text-white font-bold">{{$pizza->nom}}</span>
-                {{-- <span class="text-xl text-white font-bold">{{$pizza->taille}}</span> --}}
-                <span class="text-xl font-bold text-white">{{$pizza->prix}}</span>
+                <span class="text-xl font-bold text-white">{{$pizza->prix}}€</span>
               </div>
             </a>
         @endforeach

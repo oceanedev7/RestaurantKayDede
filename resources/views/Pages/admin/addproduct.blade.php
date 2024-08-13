@@ -43,7 +43,7 @@
     @foreach ($produits as $produit)
 
     <div>{{$produit->type}}</div>
-    <img class="" src="{{ Storage::url($produit->photo) }}" />
+    <img src="{{ Storage::url($produit->photo) }}" />
     <div>{{$produit->nom}}</div>
     <div>{{$produit->ingredients}}</div>
     <div>{{$produit->description}}</div>
