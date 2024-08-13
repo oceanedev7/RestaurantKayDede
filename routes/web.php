@@ -39,7 +39,9 @@ Route::get('/notrecarte', [ProductViewController::class, 'index'])->name('notrec
 Route::get('/produit/{id}', [ProductViewController::class, 'show'])->name('produit');
 
 
-
+Route::get('/reserver', function () {
+    return view('pages.user.reserver');
+})->name('reserver');
 
 
 

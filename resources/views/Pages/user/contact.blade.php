@@ -47,7 +47,7 @@
         </div>
         <div class="flex flex-row space-x-4">
             <i class="fa-solid fa-clock text-2xl text-beige mt-6"></i>
-            <div>Du Lundi au Samedi de 11H à 14H et de 17H à 23H</div>
+            <div>Du Lundi au Samedi de 11H à 14H et de 17H à 21H</div>
         </div>
     </div>
 
@@ -57,17 +57,17 @@
 <div class="p-10 flex flex-col items-center">
     <div class="text-beige font-black text-3xl text-center"> FORMULAIRE DE CONTACT </div>
 
-    <form method="post" action="{{route ('contact')}}">
+    <form method="post" action="{{route ('contact')}} ">
         @csrf
 
         <div class="flex flex-row space-x-2 mt-6">
-            <input class="rounded-lg border-none bg-gris-fonce placeholder-white text-white" placeholder="Nom" name="nom"/>
-            <input class="rounded-lg border-none bg-gris-fonce placeholder-white text-white"  placeholder="Adresse e-mail" name="email"/>
+            <input class=" p-2 rounded-lg border-none bg-gris-fonce placeholder-white text-white" placeholder="Nom" name="nom"/>
+            <input class=" p-2 rounded-lg border-none bg-gris-fonce placeholder-white text-white"  placeholder="Adresse e-mail" name="email"/>
         </div>
 
         <div class="flex flex-col space-y-2">
-            <input class="rounded-lg mt-2 border-none bg-gris-fonce placeholder-white text-white"  placeholder="Sujet" name="sujet"/>
-            <textarea rows="4" cols="50" class="rounded-lg resize-none border-none bg-gris-fonce placeholder-white text-white" placeholder="Message" name="message"> </textarea>
+            <input class=" p-2 rounded-lg mt-2 border-none bg-gris-fonce placeholder-white text-white"  placeholder="Sujet" name="sujet"/>
+            <textarea rows="4" cols="50" class="rounded-lg resize-none border-none bg-gris-fonce placeholder-white text-white" placeholder="Message" name="message"></textarea>
         </div>
 
         <div class="flex flex-col items-end">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -30,7 +30,7 @@
         <a href="{{route ('notrecarte')}}">Notre carte</a>
         </div>
         <div class="space-x-4"> 
-        <a class="bg-beige font-extrabold rounded-lg px-4 py-2" href="">Réserver une table</a>
+        <a class="bg-beige font-extrabold rounded-lg px-4 py-2" href="{{route ('reserver')}}">Réserver une table</a>
         <a class="bg-beige font-extrabold rounded-lg px-4 py-2" href="">Commander en ligne</a>
         <a class="bg-beige font-extrabold rounded-lg px-4 py-2" href="{{route ('contactez-nous')}}">Contact</a>
         </div>
