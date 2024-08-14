@@ -15,7 +15,7 @@
     @section('photo')
     <img class="h-screen w-full opacity-40" src="{{ Storage::url('images/reserver.jpg') }}" alt="">
     <div class="flex flex-row justify-center">
-    <div class="text-white absolute bottom-60 text-6xl font-black"> RESERVEZ UNE TABLE </div>
+    <div class="text-white absolute bottom-60 text-6xl font-black"> RÉSERVER UNE TABLE </div>
     </div>
     @endsection
 
@@ -24,8 +24,15 @@
     <div class="flex items-center justify-center p-12">
         <div class="w-full max-w-lg p-12 rounded-lg shadow-2xl bg-white shadow-[0px_15px_30px_rgba(0,0,0,0.3)]">
 
+            @if(session('success'))
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg ">
+                <span class="block sm:inline">{{ session('success') }}</span>
+            </div>
+            @endif
+        
+            <form action="{{route ('reserver')}}" method="POST" class="space-y-6">
+                @csrf
 
-            <form action="/submit-reservation" method="POST" class="space-y-6">
                 <div>
                     <label for="name" class="block text-beige font-semibold">Nom</label>
                     <input type="text" name="nom" placeholder="Votre nom" class=" w-full p-3 mt-1 border border-beige rounded-lg focus:outline-none focus:ring-2 focus:ring-beige" required>

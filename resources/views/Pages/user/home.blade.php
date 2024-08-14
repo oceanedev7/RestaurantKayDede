@@ -64,7 +64,7 @@
     <div class="z-10 text-white flex flex-col justify-center items-center relative bottom-72 space-y-6"> 
       
         <span class="text-6xl font-black"> RÉSERVER UNE TABLE </span>
-        <button class="bg-beige text-xl font-extrabold rounded-lg px-6 py-2 "> Je réserve </button>
+        <a href="{{route ('reserver')}}" class="bg-beige text-xl font-extrabold rounded-lg px-6 py-2 "> Je réserve </a>
        
     </div>  
     

@@ -4,6 +4,7 @@ use App\Http\Controllers\AddProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductViewController;
+use App\Http\Controllers\ReservationController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -42,6 +43,10 @@ Route::get('/produit/{id}', [ProductViewController::class, 'show'])->name('produ
 Route::get('/reserver', function () {
     return view('pages.user.reserver');
 })->name('reserver');
+
+Route::get('/nouvellereservation', [ReservationController::class, 'index'])->name('newresa');
+Route::post('/reserver', [ReservationController::class, 'create'])->name('reserver');
+
 
 
 
